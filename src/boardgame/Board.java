@@ -11,13 +11,13 @@ package boardgame;
 public class Board {
     
     private Integer rows;
-    private Integer collumns;
+    private Integer columns;
     private Piece[][] pieces;
 
-    public Board(Integer rows, Integer collumns) {
+    public Board(Integer rows, Integer columns) {
         this.rows = rows;
-        this.collumns = collumns;
-        pieces = new Piece[rows][collumns];
+        this.columns = columns;
+        pieces = new Piece[rows][columns];
     }
 
     public Integer getRows() {
@@ -28,12 +28,12 @@ public class Board {
         this.rows = rows;
     }
 
-    public Integer getCollumns() {
-        return collumns;
+    public Integer getColumns() {
+        return columns;
     }
 
-    public void setCollumns(Integer collumns) {
-        this.collumns = collumns;
+    public void setColumns(Integer columns) {
+        this.columns = columns;
     }
     
 }
