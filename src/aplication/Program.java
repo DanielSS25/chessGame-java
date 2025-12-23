@@ -4,6 +4,8 @@
  */
 package aplication;
 
+import boardgame.Board;
+
 /**
  *
  * @author danie
@@ -15,7 +17,7 @@ public class Program {
      */
     public static void main(String[] args) {
         
-        
+        Board board = new Board(8, 8);
         
     }
     
