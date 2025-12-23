@@ -8,7 +8,7 @@ package chess;
  *
  * @author danie
  */
-public enum ChessColor {
+public enum Color {
     
     BLACK,
     WHITE;

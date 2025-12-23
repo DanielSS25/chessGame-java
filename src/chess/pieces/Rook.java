@@ -2,26 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package chess;
+package chess.pieces;
 
 import boardgame.Board;
-import boardgame.Piece;
+import chess.Color;
+import chess.ChessPiece;
 
 /**
  *
  * @author danie
  */
-public class ChessPiece extends Piece {
-    
-    private Color color;
+public class Rook extends ChessPiece {
 
-    public ChessPiece(Color color, Board board) {
-        super(board);
-        this.color = color;
+    public Rook(Color color, Board board) {
+        super(color, board);
     }
-
-    public Color getColor() {
-        return color;
+    
+    @Override
+    public String toString() {
+        return "R";
     }
     
 }
