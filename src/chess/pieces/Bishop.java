@@ -1,0 +1,76 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package chess.pieces;
+
+import boardgame.Board;
+import boardgame.Position;
+import chess.ChessPiece;
+import chess.Color;
+
+/**
+ *
+ * @author danie
+ */
+public class Bishop extends ChessPiece {
+
+    public Bishop(Color color, Board board) {
+        super(color, board);
+    }
+
+    @Override
+    public boolean[][] possibleMoves() {
+        boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+        
+        Position p = new Position(0, 0);
+        
+        // nw
+        p.setValues(position.getRow() - 1, position.getColunm() - 1);
+        while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
+            mat[p.getRow()][p.getColunm()] = true;
+            p.setValues(p.getRow() - 1, p.getColunm() - 1);
+        }
+        if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
+            mat[p.getRow()][p.getColunm()] = true;
+        }
+        
+        // ne
+        p.setValues(position.getRow() - 1, position.getColunm() + 1);
+        while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
+            mat[p.getRow()][p.getColunm()] = true;
+            p.setValues(p.getRow() - 1, p.getColunm() + 1);
+        }
+        if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
+            mat[p.getRow()][p.getColunm()] = true;
+        }
+        
+        // se
+        p.setValues(position.getRow() + 1, position.getColunm() + 1);
+        while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
+            mat[p.getRow()][p.getColunm()] = true;
+            p.setValues(p.getRow() + 1, p.getColunm() + 1);
+        }
+        if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
+            mat[p.getRow()][p.getColunm()] = true;
+        }
+        
+        // sw
+        p.setValues(position.getRow() + 1, position.getColunm() - 1);
+        while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
+            mat[p.getRow()][p.getColunm()] = true;
+            p.setValues(p.getRow() + 1, p.getColunm() - 1);
+        }
+        if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
+            mat[p.getRow()][p.getColunm()] = true;
+        }
+        
+        return mat;
+    }
+    
+    @Override
+    public String toString() {
+        return "B";
+    }
+    
+}
